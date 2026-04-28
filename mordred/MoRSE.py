@@ -73,7 +73,7 @@ class MoRSE(Descriptor):
         A = A.reshape(1, -1)
 
         if self._distance == 1:
-            n = np.ones((N, N), dtype="float")
+            n = np.ones((N, N), dtype=np.float64)
 
         else:
             with self.rethrow_zerodiv():
@@ -83,6 +83,6 @@ class MoRSE(Descriptor):
 
         np.fill_diagonal(n, 0)
 
-        return np.float(0.5 * A.dot(n).dot(A.T))
+        return float(0.5 * A.dot(n).dot(A.T))
 
     rtype = float

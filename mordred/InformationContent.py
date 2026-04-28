@@ -132,8 +132,8 @@ class Ag(InformationContentBase):
         Ags = [(k, sum(1 for _ in g)) for k, g in groupby(sorted(atoms))]
         Nags = len(Ags)
         return (
-            np.fromiter((ad[k] for k, _ in Ags), "int", Nags),
-            np.fromiter((ag for _, ag in Ags), "float", Nags),
+            np.fromiter((ad[k] for k, _ in Ags), "int", count=Nags),
+            np.fromiter((ag for _, ag in Ags), "float", count=Nags),
         )
 
     rtype = None

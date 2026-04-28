@@ -27,7 +27,7 @@ class SphereMesh(object):
                 (-t, 0, -1),
                 (-t, 0, 1),
             ],
-            dtype="float",
+            dtype=np.float64,
         )
 
         self.faces = np.array(
@@ -53,7 +53,7 @@ class SphereMesh(object):
                 (8, 6, 7),
                 (9, 8, 1),
             ],
-            dtype="int",
+            dtype=np.int64,
         )
 
         self.normalize(0)
